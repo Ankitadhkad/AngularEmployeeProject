@@ -1,0 +1,57 @@
+<input #checkbox1 type="checkbox" name="toggle" id="toggle">
+<label for="toggle"></label>
+<div class="container">
+</div>
+<div class="formAdd">
+  <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="hidden" name="id" [value]="empService.employeeData.id">
+
+          <label for="name" class="float-left">Name</label>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+            Name is required.
+          </div>
+
+          <input type="text" name="name" class="form-control" placeholder="Enter Name" #name="ngModel" [(ngModel)]="empService.employeeData.name" required>
+        </div>
+        <div class="col-md-3">
+          <label for="name" class="float-left">Email</label>
+
+          <input type="text" name="email" class="form-control" placeholder="Enter Email" #lastname="ngModel" [(ngModel)]="empService.employeeData.email" required>
+        </div>
+        <div class="col-md-3">
+          <label for="name" class="float-left">Phone</label>
+
+          <input type="text" name="phone" class="form-control" placeholder="Enter phone" #lastname="ngModel" [(ngModel)]="empService.employeeData.phone" required>
+        </div>
+        <div class="col-md-3">
+          <label for="name" class="float-left">Address</label>
+
+          <input type="text" name="address" class="form-control" placeholder="Enter Address" #lastname="ngModel" [(ngModel)]="empService.employeeData.address" required>
+        </div>
+        <div class="col-md-3">
+          <label for="name" class="float-left">Department</label>
+
+          <input type="text" name="department" class="form-control" placeholder="Enter Department" #lastname="ngModel" [(ngModel)]="empService.employeeData.department" required>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8"></div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success btn-block">Save</button>
+      </div>
+      <div class="col-md-2">
+        <button type="reset" class="btn btn-danger btn-block">Cancel</button>
+      </div>
+    </div>
+
+
+
+  </form>
+  </div>
+
